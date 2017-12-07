@@ -1,0 +1,12 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule (.*) /public/$1
+
+
+RewriteRule /work /public/$1
+
+RewriteRule ^robots\.txt$ robots.txt [L]
+
+ErrorDocument 404 /public/404.html
+
+Redirect 301 ^/work/ /work
